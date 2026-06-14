@@ -115,7 +115,7 @@ export const getMe = async (): Promise<User> => {
 };  
 
 export const updateMe = async (data: Partial<User>): Promise<User> => {
-  const response = await proxyServerApi.patch('/auth/me', data);
+  const response = await proxyServerApi.patch('/users/me', data);
   return response.data;
 };
 
@@ -123,6 +123,6 @@ export type EditProfileRequest = {
   username: string;
 };
 export async function editProfile(data: EditProfileRequest) {
-  const res = await proxyServerApi.patch<User>("/users/me", data);
-  return res.data;
+  const response = await proxyServerApi.patch<User>("/users/me", data);
+  return response.data;
 }

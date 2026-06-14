@@ -2,15 +2,7 @@ import { cookies } from "next/headers";
 import { proxyServerApi } from "./api";
 import { AxiosResponse } from "axios";
 import { FetchNotesParams, NotesResponse, Note, } from "../../types/note";
-
-interface User {
-  id?: string;
-  email: string;
-  username: string;
-  avatar?: string;
-  createdAt?: string;
-  updatedAt?: string;
-}
+import { User } from "../../types/user";
 
 export const fetchNotes = async ({
   page,

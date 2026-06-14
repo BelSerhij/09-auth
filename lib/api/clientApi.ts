@@ -114,15 +114,9 @@ export const getMe = async (): Promise<User> => {
   return response.data;
 };  
 
-export const updateMe = async (data: Partial<User>): Promise<User> => {
-  const response = await proxyServerApi.patch('/users/me', data);
-  return response.data;
-};
+export type UpdateMeRequest = { username: string; };
 
-export type EditProfileRequest = {
-  username: string;
-};
-export async function editProfile(data: EditProfileRequest) {
+export const updateMe = async (data: UpdateMeRequest): Promise<User> => {
   const response = await proxyServerApi.patch<User>("/users/me", data);
   return response.data;
-}
+};

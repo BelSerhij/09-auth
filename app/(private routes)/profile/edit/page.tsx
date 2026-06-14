@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { editProfile, EditProfileRequest } from "@/lib/api/clientApi";
+import { updateMe, UpdateMeRequest } from "@/lib/api/clientApi";
 import { useAuthStore } from "@/lib/store/authStore";
 import Image from "next/image";
 
@@ -20,9 +20,9 @@ export default function NewProfile() {
     try {
       setError("");
       const formData = new FormData(e.currentTarget);
-      const formValues = Object.fromEntries(formData) as EditProfileRequest;
+      const formValues = Object.fromEntries(formData) as UpdateMeRequest;
       // Виконуємо запит
-      const newUser = await editProfile(formValues);
+      const newUser = await updateMe(formValues);
       setUser(newUser);
 
       if (newUser) {

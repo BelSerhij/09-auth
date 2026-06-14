@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 
 import css from './NoteForm.module.css';
 
-import { createNote } from '../../lib/api';
+import { createNote } from '@/lib/api/clientApi';
 import type { NoteTag } from '../../types/note';
 
 import { useNoteDraftStore } from '../../lib/store/noteStore';

@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { CreateNotePayload } from '../api';
+import { CreateNotePayload } from '../../types/note';
 import { persist } from 'zustand/middleware';
 
 type NoteDraftStore = {
